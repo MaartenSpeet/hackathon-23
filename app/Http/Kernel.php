@@ -21,7 +21,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        'azure' => \RootInc\LaravelAzureMiddleware\Azure::class,
     ];
 
     /**
@@ -39,6 +38,8 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             // 'azure' => \RootInc\LaravelAzureMiddleware\Azure::class,
         ],
+
+        'azure' => [\RootInc\LaravelAzureMiddleware\Azure::class],
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,

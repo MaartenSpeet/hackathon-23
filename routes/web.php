@@ -20,16 +20,15 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('azure')->name('dashboard');
+})->middleware(['azure'])->name('dashboard');
 
 Route::get('/logs', function () {
     return view('logs');
-})->middleware('azure')->name('logs');
+})->middleware(['azure'])->name('logs');
 
-Route::get('/login/azure', '\RootInc\LaravelAzureMiddleware\Azure@azure')
-    ->name('azure.login');
-Route::get('/login/azurecallback', '\RootInc\LaravelAzureMiddleware\Azure@azurecallback')
-    ->name('azure.callback');
+Route::get('/login/azure', '\RootInc\LaravelAzureMiddleware\Azure@azure')->name('azure.login');
+Route::get('/login/azurecallback', '\RootInc\LaravelAzureMiddleware\Azure@azurecallback')->name('azure.callback');
+Route::get('/logout/azure', '\RootInc\LaravelAzureMiddleware\Azure@azurelogout')->name('azure.logout');
 
 Route::middleware('azure')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
