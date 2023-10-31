@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Sign in</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,7 +25,7 @@
                     @endauth
                 </div>
             @endif --}}
-            <a href="{{ route('azure.login') }}" class="bsk-btn bsk-btn-default"><i class="fab fa-microsoft"></i> Sign in with Microsoft</a>
+            <a href="{{ route('azure.login') }}" class="bsk-btn bsk-btn-default"><i class="fab fa-microsoft"></i> Sign in with Azure</a>
         </div>
     </body>
 </html>

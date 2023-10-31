@@ -57,5 +57,5 @@ return [
     | https://docs.microsoft.com/en-us/graph/api/resources/users?view=graph-rest-1.0
     |
     */
-    'scope' => env('AZURE_SCOPE', 'User.Read'),
+    'scope' => env('AZURE_SCOPE', 'User.ReadWrite'),
 ];
