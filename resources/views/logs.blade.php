@@ -10,11 +10,18 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="flex justify-between">
-                        <p class="font-bold">Title</p>
-                        <p class="font-bold">Text</p>
-                        <p class="font-bold">Deadline</p>
-                        <p class="font-bold">Updated at</p>
-                        <p class="font-bold">Actions</p>
+                        <p class="font-bold">Level</p>
+                        <p class="font-bold">Date and Time</p>
+                        <p class="font-bold">Source</p>
+                        <p class="font-bold">Event ID</p>
+                        <p class="font-bold">Task Category</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p class="">Information</p>
+                        <p class="">1/11/2023 09:14:00</p>
+                        <p class="">WindowsUpdateClient</p>
+                        <p class="">19</p>
+                        <p class="">Windows Update Client</p>
                     </div>
                 </div>
             </div>
