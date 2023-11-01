@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/logs', [LogController::class, 'index'])->middleware(['azure'])->name('logs');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['azure'])->name('dashboard');
-
-Route::get('/logs', function () {
-    return view('logs');
-})->middleware(['azure'])->name('logs');
 
 Route::get('/login/azure', '\App\Http\Middleware\AppAzure@azure')
     ->name('azure.login');

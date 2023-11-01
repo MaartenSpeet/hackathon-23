@@ -16,13 +16,15 @@
                         <p class="font-bold">Event ID</p>
                         <p class="font-bold">Task Category</p>
                     </div>
-                    <div class="flex justify-between">
-                        <p class="">Information</p>
-                        <p class="">1/11/2023 09:14:00</p>
-                        <p class="">WindowsUpdateClient</p>
-                        <p class="">19</p>
-                        <p class="">Windows Update Client</p>
-                    </div>
+                    @foreach($logs as $log)
+                        <div class="flex justify-between items-center my-6 bg-white border-b border-gray-200 shadow-sm">
+                            <p class="">{{ $log->level }}</p>
+                            <p class="">{{ $log->date }}</p>
+                            <p class="">{{ $log->source }}</p>
+                            <p class="">{{ $log->eventid }}</p>
+                            <p class="">{{ $log->category }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
