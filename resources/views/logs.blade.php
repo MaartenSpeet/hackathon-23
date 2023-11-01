@@ -25,6 +25,7 @@
                             <p class="">{{ $log->category }}</p>
                         </div>
                     @endforeach
+                    {{ $logs->links() }}
                 </div>
             </div>
         </div>
