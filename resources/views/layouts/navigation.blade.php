@@ -23,6 +23,7 @@
                 </div>
             </div>
 
+            
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -106,3 +107,40 @@
         </div>
     </div>
 </nav>
+    
+
+    <!-- The sidebar (initially hidden) -->
+    <div class="sidebar transition-all duration-500 bg-blueviolet p-4" id="sidebar">
+        <h2>Sidebar</h2>
+        <div class="flex flex-col">
+            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Dashboard') }}
+            </x-nav-link>
+            <x-nav-link :href="route('logs')" :active="request()->routeIs('logs')">
+                {{ __('Logs') }}
+            </x-nav-link>
+        </div>
+    </div>
+
+    <div class="test w-full p-4">
+        <button onclick="toggleSidebar()" class="py-2 px-4 bg-blue-500 text-white rounded cursor-pointer transition duration-300 hover:bg-blue-700" id="sidebar-toggle">Open/Sluit Sidebar</button>
+
+        <div class="searchTable">
+            <!-- Your search input and select here -->
+        </div>
+
+        <table class="w-full border border-gray-300 rounded my-4">
+            <!-- Your table content here -->
+        </table>
+    </div>
+
+
+    <script>
+        function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var button = document.getElementById("sidebar-toggle");
+
+        sidebar.classList.toggle('open');
+        button.classList.toggle('open');
+    }
+    </script>
