@@ -10,19 +10,7 @@ class LogController extends Controller
 {
     public function index()
     {
-        $logs = Log::where('level', 1)->latest('updated_at')->paginate(5);
+        $logs = Log::whereBetween('level', [1, 4])->latest('updated_at')->paginate(10);
         return view('logs')->with('logs', $logs);
-    }
-
-    public function getLogData()
-    {
-
-    }
-
-    public function decodeJson($logdata)
-    {
-        $jsonobject = $logdata;
-        $phpobject = json_decode($jsonobject);
-        return $phpobject;
     }
 }
