@@ -20,8 +20,8 @@ class AppAzure extends Azure
         $graph->setAccessToken($access_token);
 
         $graph_user = $graph->createRequest("GET", "/me")
-                      ->setReturnType(Model\User::class)
-                      ->execute();
+            ->setReturnType(Model\User::class)
+            ->execute();
 
         $email = strtolower($graph_user->getUserPrincipalName());
 
